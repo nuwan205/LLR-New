@@ -37,10 +37,9 @@ const EmailVerify = () => {
     const { token, userId } = router.query
     if (typeof token === 'string' && typeof userId === 'string') {
       api
-        .post('/email-verify', { token, id: userId })
+        .post('/user/email-verify', { token, id: userId })
         .then(res => {
           // save local storages
-
           setItem('accessToken', res.data.accessToken)
           setItem('refreshToken', res.data.refreshToken)
           setItem('userData', JSON.stringify({ email: res.data.profile.email, stage: res.data.stage }))
@@ -71,7 +70,7 @@ const EmailVerify = () => {
   }
 
   const { toolkit } = router.query
-
+  console.log(router.query)
   let redirectUrl = '/register/payment'
   if (toolkit) {
     redirectUrl = `${redirectUrl}?toolkit=${toolkit}`

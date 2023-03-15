@@ -1,7 +1,7 @@
 export default {
-  meEndpoint: `/me`,
+  meEndpoint: `/user/details`,
   loginEndpoint: '/login',
-  registerEndpoint: `/user-register`,
+  registerEndpoint: `/user/add`,
   registerPaymentEndpoint: '/registerPayment',
   storageTokenKeyName: 'accessToken'
 }

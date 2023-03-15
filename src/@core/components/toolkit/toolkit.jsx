@@ -14,7 +14,7 @@ export default function Toolkit() {
   useEffect(() => {
     setLoading(true)
     api
-      .get('/toolkits')
+      .get('/toolkit/list')
       .then(res => {
         setProductList(res.data)
         setLoading(false)

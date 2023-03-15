@@ -49,7 +49,7 @@ const Payment = () => {
   useEffect(() => {
     setLoading(true)
     api
-      .get('/toolkits')
+      .get('/toolkit/list')
       .then(res => {
         setProductList(res.data)
         setLoading(false)
@@ -64,7 +64,7 @@ const Payment = () => {
     e.preventDefault()
     setLoading(true)
     api
-      .post('/create-seesion', { productId: getProdId() })
+      .post('/payment/create_session', { productId: "prod_NWcn1NmuZVWhfl" })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)

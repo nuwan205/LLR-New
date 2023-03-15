@@ -46,6 +46,7 @@ const AuthProvider = ({ children }: Props) => {
   const router = useRouter()
 
   useEffect(() => {
+
     const initAuth = async (): Promise<void> => {
       setIsInitialized(true)
       const storedToken = getItem(authConfig.storageTokenKeyName)!
@@ -54,7 +55,7 @@ const AuthProvider = ({ children }: Props) => {
         try {
           const {
             data: { me, stage, isAdmin }
-          } = await api.get<ProfileResponse>('/me')
+          } = await api.get<ProfileResponse>('/user/profile')
           setUser({ email: me.email, id: me.userId, stage, name: me.firstName, imageUrl: me.imageUrl, isAdmin })
           setItem('userData', JSON.stringify({ email: me.email, stage, isAdmin }))
           setLoading(false)

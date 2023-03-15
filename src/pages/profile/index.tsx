@@ -96,7 +96,7 @@ const UserView = () => {
   useEffect(() => {
     setLoading(true)
     api
-      .get<ProfileResponse>('/me')
+      .get<ProfileResponse>('/user/details')
       .then(res => {
         setLoading(false)
         const { firstName, email, phone, imageUrl } = res.data.me
