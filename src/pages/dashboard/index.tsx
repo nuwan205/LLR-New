@@ -49,6 +49,7 @@ const Dashboard = () => {
   const router = useRouter()
 
   useEffect(() => {
+    console.log(auth)
     if (auth.user?.stage !== STAGE.COMPLETE) {
       router.replace('/')
     }

@@ -113,7 +113,7 @@ const TenantDetails = ({ initialCreate, handleGoBack, handleOnSubmit, isAddorEdi
       }
     } else {
       api
-        .post('/add-tenant', tenantStateToApi(data))
+        .post('/tenant/add-tenant', tenantStateToApi(data))
         .then(() => {
           removeItem('property')
           removeItem('landlord')
